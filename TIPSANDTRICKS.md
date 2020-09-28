@@ -18,3 +18,13 @@
 ## Tools:
 1. https://frowcss.com/getting-started.html
 2. https://www.mycssbuilder.com (css builders)
+
+1. Footer Fetish - MJ
+2. Carousel - Marc
+3. Overlay Nav - Dela
+4. Sexy Nav - Ed
+5. Photo libraby - Matt
+6. Podcast (audio player) - Frem
+7. Video - Don
+8. Form - (Marc if carousel doesn't work)
+9. Deck of cards - Matt
