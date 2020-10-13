@@ -1,0 +1,362 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  margin: 0 auto;
+}
+
+header, footer {
+  background-color: #A03;
+  height: 100px;
+  max-width: 1024px;
+  width: 100%;
+  min-width: 750px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin: 0;
+  padding: 20px;
+  color: #fff;
+  font-size: 30px;
+}
+
+h1 {
+  font-size: 48px;
+  color: #9C00AA;
+  margin: 0;
+}
+
+p {
+  margin: 10px;
+  font-size: 18px;
+}
+
+code {
+  font-weight: bold;
+}
+
+.main-body {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.carousel-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1024px;
+  min-width: 670px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px;
+  background-color: #ddf;
+  border-radius: 10px;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.carousel {
+  min-width: 100%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative;
+}
+
+.carousel__controls {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 0;
+  right: -25px;
+  left: -25px;
+  bottom: 0;
+}
+
+.carousel__button {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffc;
+  color: #3d414a;
+  border-radius: 100%;
+  border-collapse: separate;
+  font-size: 24px;
+  height: 48px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  width: 48px;
+  z-index: 1;
+}
+
+.carousel__button:hover {
+  background-color: #abf;
+  color: #ffc;
+}
+
+.carousel__screen {
+  overflow: hidden;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.carousel__track {
+  font-size: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  white-space: nowrap;
+}
+
+.carousel__item {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding-left: 16px;
+  padding-right: 16px;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.carousel__activator {
+  display: inline-block;
+  height: 0;
+}
+
+.carousel__activator:nth-of-type(1):checked ~ .carousel__controls:nth-of-type(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(1):checked ~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.carousel__activator:nth-of-type(2):checked ~ .carousel__controls:nth-of-type(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(2):checked ~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.carousel__activator:nth-of-type(3):checked ~ .carousel__controls:nth-of-type(3) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(3):checked ~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+
+.carousel__activator:nth-of-type(4):checked ~ .carousel__controls:nth-of-type(4) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(4):checked ~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(-300%);
+          transform: translateX(-300%);
+}
+
+.carousel__activator:nth-of-type(5):checked ~ .carousel__controls:nth-of-type(5) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(5):checked ~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(-400%);
+          transform: translateX(-400%);
+}
+
+.carousel__activator:nth-of-type(6):checked ~ .carousel__controls:nth-of-type(6) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(6):checked ~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(-500%);
+          transform: translateX(-500%);
+}
+
+.carousel__activator:nth-of-type(7):checked ~ .carousel__controls:nth-of-type(7) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(7):checked ~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(-600%);
+          transform: translateX(-600%);
+}
+
+.carousel__activator:nth-of-type(8):checked ~ .carousel__controls:nth-of-type(8) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(8):checked ~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(-700%);
+          transform: translateX(-700%);
+}
+
+.carousel__activator:nth-of-type(9):checked ~ .carousel__controls:nth-of-type(9) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(9):checked ~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(-800%);
+          transform: translateX(-800%);
+}
+
+/* project-specific layout classes */
+.slide-content {
+  color: #553366;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  border: 2px solid #553366;
+  border-radius: 3px;
+  height: 550px;
+  width: 100%;
+}
+
+.slide-content .slide-header {
+  margin: 0;
+  background-color: #9C00AA;
+  height: 17%;
+}
+
+.slide-content .slide-body {
+  padding: 20px;
+}
+
+.slide-content .slide-figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 10px;
+}
+
+.centered-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.carousel__item--desktop {
+  width: 100%;
+}
+
+/* Mobile carousel is a different beast entirely. "Prev/Next" button 
+   functionality is removed and makes use of the "scroll-snap-" CSS properties */
+@media screen and (max-width: 1023px) {
+  .carousel-container {
+    min-width: 750px;
+  }
+  .carousel {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .carousel__activator:nth-of-type(n):checked ~ .carousel__controls:nth-of-type(n) {
+    display: none;
+  }
+  .carousel__activator:nth-of-type(n):checked ~ .carousel__screen {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .carousel__screen {
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 690px;
+  }
+  .carousel__track {
+    display: block;
+    width: auto;
+    min-width: 670px;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .carousel__track::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel__item {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    vertical-align: top;
+    white-space: normal;
+  }
+  .carousel__item--mobile {
+    width: 100%;
+    scroll-snap-align: center;
+  }
+}
+/*# sourceMappingURL=noJSCarousel.css.map */

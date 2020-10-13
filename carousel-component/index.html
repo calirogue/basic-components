@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="./noJSCarousel.css" media="screen" />
+    <title>No-JS Carousel</title>
+</head>
+<body>
+    <div class="body">
+        <header>..</header>
+        <main class="main-body">
+            <div class="flex-container">
+                <div class="carousel-container">
+                    <div class="carousel">
+<!--
+Radio buttons are used to determine how many slides there are in the
+carousel.	However, because of how the radio buttons are arranged in the hierarchy,
+they do not drive the functionality, so they are set to	"display: none".
+Their respective labels drive the action.
+-->
+                        <input class="carousel__activator" id="carousel-slide-activator-1" name="carousel" type="radio" checked="checked">
+                        <input class="carousel__activator" id="carousel-slide-activator-2" name="carousel" type="radio">
+                        <input class="carousel__activator" id="carousel-slide-activator-3" name="carousel" type="radio">
+                        <input class="carousel__activator" id="carousel-slide-activator-4" name="carousel" type="radio">
+                        <input class="carousel__activator" id="carousel-slide-activator-5" name="carousel" type="radio">
+                        <input class="carousel__activator" id="carousel-slide-activator-6" name="carousel" type="radio">
+                        <input class="carousel__activator" id="carousel-slide-activator-7" name="carousel" type="radio">
+                        <input class="carousel__activator" id="carousel-slide-activator-8" name="carousel" type="radio">
+                        <input class="carousel__activator" id="carousel-slide-activator-9" name="carousel" type="radio">
+<!--
+There is a control panel set (a DIV containing a "previous" button and
+a "next" button) for every slide in the carousel. In other words, for
+every radio button above, there should be a set of LABEL elements that
+represent "previous" and "next"	buttons for each slide.
+-->
+                        <div class="carousel__controls">
+                            <label class="carousel__button carousel__control--backward" for="carousel-slide-activator-9">
+                                &#9664;
+                            </label>
+                            <label class="carousel__button carousel__control--forward" for="carousel-slide-activator-2">
+                                &#9654;
+                            </label>
+                        </div>
+                        <div class="carousel__controls">
+                            <label class="carousel__button carousel__control--backward" for="carousel-slide-activator-1">
+                                &#9664;
+                            </label>
+                            <label class="carousel__button carousel__control--forward" for="carousel-slide-activator-3">
+                                &#9654;
+                            </label>
+                        </div>
+                        <div class="carousel__controls">
+                            <label class="carousel__button carousel__control--backward" for="carousel-slide-activator-2">
+                                &#9664;
+                            </label>
+                            <label class="carousel__button carousel__control--forward" for="carousel-slide-activator-4">
+                                &#9654;
+                            </label>
+                        </div>
+                        <div class="carousel__controls">
+                            <label class="carousel__button carousel__control--backward" for="carousel-slide-activator-3">
+                                &#9664;
+                            </label>
+                            <label class="carousel__button carousel__control--forward" for="carousel-slide-activator-5">
+                                &#9654;
+                            </label>
+                        </div>
+                        <div class="carousel__controls">
+                            <label class="carousel__button carousel__control--backward" for="carousel-slide-activator-4">
+                                &#9664;
+                            </label>
+                            <label class="carousel__button carousel__control--forward" for="carousel-slide-activator-6">
+                                &#9654;
+                            </label>
+                        </div>
+                        <div class="carousel__controls">
+                            <label class="carousel__button carousel__control--backward" for="carousel-slide-activator-5">
+                                &#9664;
+                            </label>
+                            <label class="carousel__button carousel__control--forward" for="carousel-slide-activator-7">
+                                &#9654;
+                            </label>
+                        </div>
+                        <div class="carousel__controls">
+                            <label class="carousel__button carousel__control--backward" for="carousel-slide-activator-6">
+                                &#9664;
+                            </label>
+                            <label class="carousel__button carousel__control--forward" for="carousel-slide-activator-8">
+                                &#9654;
+                            </label>
+                        </div>
+                        <div class="carousel__controls">
+                            <label class="carousel__button carousel__control--backward" for="carousel-slide-activator-7">
+                                &#9664;
+                            </label>
+                            <label class="carousel__button carousel__control--forward" for="carousel-slide-activator-1">
+                                &#9654;
+                            </label>
+                        </div>
+                        <div class="carousel__controls">
+                            <label class="carousel__button carousel__control--backward" for="carousel-slide-activator-8">
+                                &#9664;
+                            </label>
+                            <label class="carousel__button carousel__control--forward" for="carousel-slide-activator-1">
+                                &#9654;
+                            </label>
+                        </div>
+<!--
+Slide content DIVs are horizontally arranged in the "carousel track"; the screen hides the other slides.
+CSS classes are generated with translateX() properties to position the track to display the slide
+corresponding to the "checked" radio button.
+-->
+                        <div class="carousel__screen">
+                            <div class="carousel__track">
+                                <div class="carousel__item carousel__item--desktop carousel__item--mobile">
+                                    <div class="slide-content">
+                                        <div class="centered-content">
+                                            <div>
+                                                <h1>No-JS Carousel</h1>
+                                                <h3>It's Cool and All, But...</h3>
+                                                <img src="images/noJSCarousel_MarcEh.png" height="auto" width="auto" />
+                                                <h3>
+                                                    Explaining How A Carousel Works With A Carousel<br>
+                                                    By Marc Concepcion
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel__item carousel__item--desktop carousel__item--mobile">
+                                    <div class="slide-content">
+                                        <div class="slide-header">
+                                            <h2>The Gist of It</h2>
+                                        </div>
+                                        <figure class="slide-figure">
+                                            <img src="images/noJSCarousel-TheGist.png" height="auto" width="auto" />
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="carousel__item carousel__item--desktop carousel__item--mobile">
+                                    <div class="slide-content">
+                                        <div class="slide-header">
+                                            <h2>Things Working Together</h2>
+                                        </div>
+                                        <figure class="slide-figure">
+                                            <img src="images/noJSCarousel-WorkingTogether.png" height="auto" width="auto" />
+                                        </figure>
+                                        <p style="position: relative; top: -109px; left: 43px; font-size: 24px; line-height: 30px;">
+                                            <a href="https://gist.github.com/MConcepcion/4b141e6b0a931592e8c9ea53f48b578e" target="_blank">HTML Snippet</a><br>
+                                            <a href="https://gist.github.com/MConcepcion/48c177b5dcb304ddfb777e572404bd36" target="_blank">CSS Snippet</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="carousel__item carousel__item--desktop carousel__item--mobile">
+                                    <div class="slide-content">
+                                        <div class="slide-header">
+                                            <h2>A Tiny Issue(s)</h2>
+                                        </div>
+                                        <figure class="slide-figure">
+                                            <img src="images/noJSCarousel-TinyIssues.png" width="auto" height="auto" />
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="carousel__item carousel__item--desktop carousel__item--mobile">
+                                    <div class="slide-content">
+                                        <div class="slide-header">
+                                            <h2>So Wait...</h2>
+                                        </div>
+                                        <figure class="slide-figure">
+                                            <img src="images/noJSCarousel-SoWait.png" width="auto" height="auto" />
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="carousel__item carousel__item--desktop carousel__item--mobile">
+                                    <div class="slide-content">
+                                        <div class="slide-header">
+                                            <h2>Introducing The "Checkbox Hack"</h2>
+                                        </div>
+                                        <figure class="slide-figure">
+                                            <img src="images/noJSCarousel-CheckboxHack.png" width="auto" height="auto" />
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="carousel__item carousel__item--desktop carousel__item--mobile">
+                                    <div class="slide-content">
+                                        <div class="slide-header">
+                                            <h2>Going Off-Script: Plusses and Minuses</h2>
+                                        </div>
+                                        <figure class="slide-figure">
+                                            <img src="images/noJSCarousel-GoingOffScript.png" width="auto" height="auto" />
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="carousel__item carousel__item--desktop carousel__item--mobile">
+                                    <div class="slide-content">
+                                        <div class="slide-header">
+                                            <h2>Now, All That Said...</h2>
+                                        </div>
+                                        <figure class="slide-figure">
+                                            <a href="http://shouldiuseacarousel.com/" target="_blank"><img src="images/noJSCarousel-AllThatSaid.png" width="auto" height="auto" /></a>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="carousel__item carousel__item--desktop carousel__item--mobile">
+                                    <div class="slide-content">
+                                        <div class="centered-content">
+                                            <div>
+                                                <img src="images/noJSCarousel_seeYa.png" height="auto" width="auto" />
+                                                <h1>That's it!</h1>
+                                                <h3>Thanks for hanging out!</h3>
+                                                <p>Big thanks go to <a href="https://medium.com/carwow-product-engineering/making-a-carousel-component-without-javascript-f7c68e3e6f8b" target="_blank">Vincent Navetat</a>, 
+                                                   <a href="" target="_blank">Jhey Tompkins</a>, and<br>
+                                                   the <a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank">MDN Web Docs</a> community for getting me up to speed<br>
+                                                   with this cool concept!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        <footer class="footer">..</footer>
+    </div>
+</body>
+</html>
