@@ -1,0 +1,257 @@
+
+// maximum number of slides the carousel can have on large screens
+$number-of-slides: 9;
+$main-purple: #9C00AA;
+$text-purple: #553366;
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 auto;
+}
+
+header, footer {
+  background-color: #A03;
+  height: 100px;
+  max-width: 1024px;
+  width: 100%;
+  min-width: 750px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin: 0;
+  padding: 20px;
+  color: #fff;
+  font-size: 30px;
+}
+
+h1 {
+  font-size: 48px;
+  color: $main-purple;
+  margin: 0;
+}
+
+p {
+  margin: 10px;
+  font-size: 18px;
+}
+
+code {
+  font-weight: bold;
+}
+
+.main-body {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.carousel-container {
+  display: flex;
+  max-width: 1024px;
+  min-width: 670px;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 30px;
+  background-color: #ddf;
+  border-radius: 10px;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.carousel {
+  min-width: 100%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative;
+
+  // layout for each control panel for each slide; are invisible until corresponding radio button is set to "checked"
+  &__controls {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    right: -25px;
+    left: -25px;
+    bottom: 0;
+  }
+  
+  // appearance for "prev" and "next" buttons
+  &__button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: #ffc;
+    color: #3d414a;
+    border-radius: 100%;
+    border-collapse: separate;
+    font-size: 24px;
+    height: 48px;
+    justify-content: center;
+    transition: 0.3s all;
+    width: 48px;
+    z-index: 1;
+    
+    &:hover {
+      background-color: #abf;
+      color: #ffc;
+    }
+  }
+  
+  // viewport for inline items (carousel track)
+  &__screen {
+    overflow: hidden;
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+
+  // "font size 0" trick to remove space between the slides
+  // https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+  &__track {
+    font-size: 0;
+    transition: all 0.3s ease 0s;
+    white-space: nowrap;
+  }
+  
+
+
+  &__item {
+    display: inline-flex;
+    padding-left: 16px;
+    padding-right: 16px;
+    vertical-align: top;
+    white-space: normal;
+  }
+}
+
+// for the radio buttons; makes radio buttons "invisible"
+// simply using "display: none" removes the ability to
+// use the arrow keys to move the carousel
+.carousel__activator {
+  display: inline-block;
+  height: 0;
+  // for loops to create snap points for slides along the carousel track
+  @for $i from 1 through $number-of-slides {
+    &:nth-of-type(#{$i}):checked
+      ~ .carousel__controls:nth-of-type(#{$i}) {
+      display: flex;
+    }
+
+    &:nth-of-type(#{$i}):checked
+      ~ .carousel__screen
+      .carousel__track {
+      transform: translateX(#{(1 - $i) * 100%});
+    }
+  }
+}
+
+/* project-specific layout classes */
+.slide-content {
+  color: $text-purple;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  border: 2px solid $text-purple;
+  border-radius: 3px;
+  height: 550px;
+  width: 100%;
+
+  & .slide-header {
+    margin: 0;
+    background-color: $main-purple;
+    height: 17%;
+  }
+
+  & .slide-body {
+    padding: 20px;
+  }
+
+  & .slide-figure {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 10px;
+  }
+}
+
+.centered-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+// match width of the carousel item to the width of the carousel screen
+// can be iterated to view multiple carousel items in view
+.carousel__item--desktop {
+  width: 100%;
+}
+
+/* Mobile carousel is a different beast entirely. "Prev/Next" button 
+   functionality is removed and makes use of the "scroll-snap-" CSS properties */
+@media screen and (max-width: 1023px) {
+  .carousel-container {
+    min-width: 750px;
+  }
+  .carousel {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .carousel__activator:nth-of-type(n):checked {
+    ~ .carousel__controls:nth-of-type(n) {
+      display: none;
+    }
+
+    ~ .carousel__screen {
+      transform: none;
+    }
+  }
+
+  .carousel__screen {
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 690px;
+  }
+
+  .carousel__track {
+    display: block;
+    width: auto;
+    min-width: 670px;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .carousel__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel__item {
+    display: inline-flex;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    vertical-align: top;
+    white-space: normal;
+  }
+
+  .carousel__item--mobile {
+    width: 100%;
+    scroll-snap-align: center;
+  }
+}
